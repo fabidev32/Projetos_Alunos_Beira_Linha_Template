@@ -21,7 +21,7 @@ const Jogo = (nome, descricao, imagem, link) => ({
 });
 
 function VerificarCampos(jogo) {
-  if (jogo.nome != "" && jogo.descriçao != "" && jogo.link !== "") {
+  if (jogo.nome != "" && jogo.descricao != "" && jogo.link !== "") {
     return true;
   }
 
@@ -42,7 +42,6 @@ function CriarJogo() {
   jogos.push(novoJogo);
 
   if (VerificarCampos(novoJogo)) {
-    jogos.push(novoJogo);
     ListaSemFiltro();
   } else {
     alert("Preencha todos os campos obrigatórios!");
