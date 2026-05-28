@@ -2,10 +2,19 @@
 let campoNome = document.getElementById("nome_carro");
 let campoDescricao = document.getElementById("descrição");
 let galeria_de_carros = document.querySelector(".galeria_de_carros");
-
 let descricao = document.querySelector("#descrição");
 let nome = document.querySelector("#nome_carro");
 let input_com_imagem = document.getElementById("input_com_imagem");
+const texto_pesquisa = document.querySelector("#texto_pesquisa");
+const limpar_filtro = document.querySelector("#limpar_filtro");
+
+texto_pesquisa.addEventListener("input", function () {
+  ListaComFiltro();
+});
+
+limpar_filtro.addEventListener("click", function () {
+  ListaSemFiltro();
+});
 
 // Array que vai armazenar os objetos de carros cadastrados
 let car = [];
@@ -46,17 +55,64 @@ function cadastrar_carros() {
   // Adiciona o novo carro dentro do array 'car'
   car.push(novo_carro);
   console.log(novo_carro);
+  // Limpa os campos de texto após o cadastro com sucesso
+  ListaSemFiltro();
+  novo_carro_campos();
+}
 
+function ListaComFiltro() {
   // Limpa a galeria na tela antes de refazer a lista atualizada
   galeria_de_carros.innerHTML = "";
-
   // Loop que percorre o array 'car' criando elementos puros na memória
   // Loop que percorre o array 'car' criando elementos puros na memória
   for (let i = 0; i < car.length; i++) {
     // CORREÇÃO: Cria uma caixinha (div) para o carro e adiciona a classe do seu CSS
+
+    if (car[i].nome == texto_pesquisa.value) {
+      const cartao = document.createElement("div");
+      cartao.classList.add("cartao-item");
+      const titulo = document.createElement("h3");
+      const paragrafo = document.createElement("p");
+      const imagem = document.createElement("img");
+      const button = document.createElement("div");
+      button.innerHTML = `
+             
+         <button id="remover" onclick="removerelement()">Remover itens</button>
+           
+        `;
+
+      titulo.textContent = car[i].nome;
+      paragrafo.textContent = car[i].descricao;
+
+      // Se houver uma imagem cadastrada, define o link dela e adiciona no cartão
+      if (car[i].imagem !== "") {
+        imagem.src = car[i].imagem;
+        imagem.style.width = "100%"; // Ajustado para ocupar a largura do cartão
+        imagem.style.borderRadius = "4px"; // Arredonda os cantos da imagem
+        cartao.appendChild(imagem);
+      }
+
+      // Coloca o título e o parágrafo dentro da caixinha do carro
+      cartao.appendChild(titulo);
+      cartao.appendChild(paragrafo);
+      cartao.appendChild(button);
+
+      // Coloca a caixinha completa dentro da galeria principal
+      galeria_de_carros.appendChild(cartao);
+    }
+  }
+}
+
+function ListaSemFiltro() {
+  // Limpa a galeria na tela antes de refazer a lista atualizada
+  galeria_de_carros.innerHTML = "";
+  // Loop que percorre o array 'car' criando elementos puros na memória
+  // Loop que percorre o array 'car' criando elementos puros na memória
+  for (let i = 0; i < car.length; i++) {
+    // CORREÇÃO: Cria uma caixinha (div) para o carro e adiciona a classe do seu CSS
+
     const cartao = document.createElement("div");
     cartao.classList.add("cartao-item");
-
     const titulo = document.createElement("h3");
     const paragrafo = document.createElement("p");
     const imagem = document.createElement("img");
@@ -81,13 +137,11 @@ function cadastrar_carros() {
     // Coloca o título e o parágrafo dentro da caixinha do carro
     cartao.appendChild(titulo);
     cartao.appendChild(paragrafo);
+    cartao.appendChild(button);
 
     // Coloca a caixinha completa dentro da galeria principal
     galeria_de_carros.appendChild(cartao);
   }
-
-  // Limpa os campos de texto após o cadastro com sucesso
-  novo_carro_campos();
 }
 
 // Função do botão "Remover itens" (Limpa a lista e a tela)
@@ -99,6 +153,7 @@ function remover_itens() {
 function removerelement(indice) {
   car.splice(indice, 1); //remover elemento do array
   localStorage.setItem("car", JSON.stringify(cadastrar_carros));
+  ListaSemFiltro();
 }
 
 // Função do botão "Novo carro" (Apenas limpa os campos de texto)

@@ -4,33 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./../css/cadastro.css" class="stylesheet" />
   </head>
 
   <body>
-    <div>
-      <input
-        type="text"
-        id="nome"
-        placeholder="Digite o nome 
+    <main>
+      <div class="div_formulario">
+        <input
+          type="text"
+          id="nome"
+          placeholder="Digite o nome 
 do jogo"
-      />
-      <input
-        type="text"
-        id="descricao"
-        placeholder="Digite a 
+        />
+        <input
+          type="text"
+          id="descricao"
+          placeholder="Digite a 
 descrição do jogo"
-      />
-      <input
-        type="text"
-        id="link"
-        placeholder="Digite o link 
+        />
+        <input
+          type="text"
+          id="link"
+          placeholder="Digite o link 
 do jogo"
-      />
-      <label for="input_com_imagem"> Selecione uma imagem </label>
-      <input type="file" id="input_com_imagem" />
-      <button onclick="CriarJogo()">Adicionar jogo</button>
+        />
+        <label for="input_com_imagem"> Selecione uma imagem </label>
+        <input type="file" id="input_com_imagem" />
+        <button id = "cadastrar" onclick="CriarJogo()">Adicionar jogo</button>
+      </div>
+
+      <!-- Filtro dos cadastro -->
+      <h2>Confira a minha lista de jogos abaixo!</h2>
+      <div class="div_filtro">
+        <p>Filtre pelo nome dos jogos!</p>
+        <input type="text" id="texto_pesquisa" />
+        <button id="limpar_filtro">Limpar filtro</button>
+      </div>
+
       <div class="lista_de_jogos"></div>
-    </div>
+    </main>
     <script src="./../javascript/cadastro.js"></script>
   </body>
 </html>
