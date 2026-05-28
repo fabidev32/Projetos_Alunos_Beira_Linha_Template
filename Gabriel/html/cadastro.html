@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+          rel="stylesheet"
+          href="./../css/cadastro.css"
+          class="stylesheet"
+        />
+      </head>
+      <body>
+        <main>
+          <!-- Formulário -->
+          <div class="div_formulario">
+            <input id="nome" type="text" placeholder="Digite o nome" />
+            <input
+              id="descriçao"
+              type="text"
+              placeholder="Digite a descriçao"
+            />
+            <input
+              type="text"
+              id="link"
+              placeholder="Digite o link da comida"
+            />
+            <label for="input_com_imagem">Selecione uma imagem</label>
+            <input type="file" id="input_com_imagem" />
+            <button id = "cadastrar" onclick="cadastrar_comida()">Cadastrar</button>
+          </div>
+
+          <!-- Filtro dos cadastro -->
+          <h2>Confira a minha lista de comidas abaixo!</h2>
+          <div class = "div_filtro">
+            <p>Filtre pelos sabores que você desejar!</p>
+            <input type="text" id= "texto_pesquisa" />
+            <button id = "limpar_filtro"> Limpar filtro </button>
+          </div>
+
+          <!-- Lista dos cadastros -->
+          <div class="lista_de_comidas"></div>
+        </main>
+
+        <script src="./../javascript/cadastro.js"></script>
+      </body>
+    </html>
+  </body>
+</html>

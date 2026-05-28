@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div>
+      <input
+        type="text"
+        id="nome"
+        placeholder="Digite o nome 
+do jogo"
+      />
+      <input
+        type="text"
+        id="descricao"
+        placeholder="Digite a 
+descrição do jogo"
+      />
+      <input
+        type="text"
+        id="link"
+        placeholder="Digite o link 
+do jogo"
+      />
+      <label for="input_com_imagem"> Selecione uma imagem </label>
+      <input type="file" id="input_com_imagem" />
+      <button onclick="CriarJogo()">Adicionar jogo</button>
+      <div class="lista_de_jogos"></div>
+    </div>
+    <script src="./../javascript/cadastro.js"></script>
+  </body>
+</html>

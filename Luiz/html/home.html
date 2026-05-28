@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./../css/home.css" class="stylesheet" />
+  </head>
+  <body>
+    <!-- Adicione o código da sua página abaixo!  -->
+    <header>
+      <nav class="topo">
+        <img id="img_logo" src="logo.avif" alt="Logo da empresa" />
+        <ul class="navegação">
+          <li><a id="item" href="./cadastro.html">Cadastro de Jogos</a></li>
+          <li><a id="item" href="./lista.html">Todos os Jogos</a></li>
+          <li><a id="item" href="./Favoritos.html">Favoritos</a></li>
+          <li><a id="item" href="./contatos.html">Contatos</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="section_imagens">
+      <img
+        id="anterior"
+        src="./../imagens/anterior.png"
+        alt="Ícone anterior"
+        onclick="Anterior()"
+      />
+      <div class="carrossel_de_imagens">
+        <!-- Esta é a janela (janela fixa) -->
+        <div class="carrossel_trilho">
+          <!-- Este é o trilho (quem desliza) -->
+          <img src="./../imagens/macarrao.png" alt="Imagem do carrossel" />
+          <img src="./../imagens/macarrao.png" alt="Imagem do carrossel" />
+          <img src="./../imagens/macarrao.png" alt="Imagem do carrossel" />
+          <img src="./../imagens/macarrao.png" alt="Imagem do carrossel" />
+        </div>
+      </div>
+      <img
+        id="proximo"
+        src="./../imagens/proximo.png"
+        alt="Ícone próximo"
+        onclick="Proximo()"
+      />
+    </section>
+
+    <script src="./../javascript/home.js"></script>
+  </body>
+</html>

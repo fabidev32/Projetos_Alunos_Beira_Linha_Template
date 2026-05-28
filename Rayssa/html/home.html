@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biblioteca de carros</title>
+    <link rel="stylesheet" href="./../css/home.css" />
+  </head>
+
+  <body>
+    <!-- Topo da página -->
+    <header>
+      <nav>
+        <a href="carros" class="nav-btn"> cadastro de carros </a>
+        <a href="carros" class="nav-btn"> Todos os carros </a>
+        <a href="carros" class="nav-btn"> Favoritos </a>
+        <a href="carros" class="nav-btn"> contatos </a>
+      </nav>
+    </header>
+
+    <div class="titulo">Conheça a minha galeria de carros do sonho</div>
+
+    <!-- Carrossel de imagens -->
+    <section class="section_imagens">
+      <img
+        id="anterior"
+        src="./../imagens/anterior.png"
+        alt="Ícone anterior"
+        onclick="Anterior()"
+      />
+      <div class="carrossel_de_imagens">
+        <div class="carrossel_trilho">
+          <img src="./../imagens/carro.png" alt="Imagem do carrossel" />
+          <img src="./../imagens/carro.png" alt="Imagem do carrossel" />
+          <img src="./../imagens/carro.png" alt="Imagem do carrossel" />
+          <img src="./../imagens/carro.png" alt="Imagem do carrossel" />
+        </div>
+      </div>
+      <img
+        id="proximo"
+        src="./../imagens/proximo.png"
+        alt="Ícone próximo"
+        onclick="Proximo()"
+      />
+    </section>
+    <!-- Finalização dos slides -->
+
+    <div class="imagens">
+      <div class="cartão">
+        <img
+          src="https://archive.seven82motors.com.au/wp-content/uploads/2024/03/69-BLOWN-FORD-MUSTANG-FASTBACK-2.jpg"
+          alt=" carro 1969-blown-ford-mustang-fastback"
+        />
+      </div>
+      <div class="cartão">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFi-A583zO8OKmKyIyEkKCOW3PlaOfy72cKujvKtDdjoRAodOB"
+          alt=" carro 1969-blown-ford-mustang-fastback"
+        />
+      </div>
+    </div>
+
+    <script src = "./../javascript/home.js"></script>
+  </body>
+</html>
