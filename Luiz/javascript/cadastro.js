@@ -45,22 +45,7 @@ function CriarJogo() {
     ListaSemFiltro();
   } else {
     alert("Preencha todos os campos obrigatórios!");
-  }
-
-  lista_de_jogos.innerHTML = "";
-  for (let i = 0; i < jogos.length; i++) {
-    const div = document.createElement("div");
-    div.classList.add("card_jogo");
-    div.innerHTML = `
-    <h3>${jogos[i].nome}</h3>
-    <p>${jogos[i].descricao}<p/>
-    <a href = "${jogos[i].link}" target= _"blank">Link do jogo</a>
-    <img width = "100px" src = "${jogos[i].imagem}">
-    <button onclick = "RemoverElemento(${i})">
-    Remover</button>
-    `;
-    lista_de_jogos.appendChild(div);
-  }
+  }  
 }
 
 function RemoverElemento(indice) {
